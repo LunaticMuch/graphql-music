@@ -31,6 +31,8 @@ class iTunes {
       json: true,
     };
 
+    console.log(`looking up artist ${name}`);
+
     const { body } = await get('https://itunes.apple.com/search', options);
     const { results } = body;
     return results.map(artist => ({

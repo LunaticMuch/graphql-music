@@ -13,11 +13,17 @@
     "url": "git@github.com:nathanchapman/graphql-music.git"
   },
   "dependencies": {
+    "@graphql-tools/graphql-file-loader": "6.2.5",
+    "@graphql-tools/load": "6.2.5",
+    "@graphql-tools/schema": "7.0.0",
     "apollo-server": "2.6.3",
     "dataloader": "1.4.0",
+    "express": "4.17.1",
+    "express-graphql": "0.11.0",
     "got": "9.6.0",
     "graphql": "14.3.1",
-    "graphql-import": "0.7.1"
+    "graphql-import": "0.7.1",
+    "graphql-tools": "4.0.4"
   },
   "devDependencies": {
     "eslint": "5.16.0",

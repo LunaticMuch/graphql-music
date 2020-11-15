@@ -1,4 +1,3 @@
-# import Event from 'event.graphql'
 
 type Artist {
   id: ID!
