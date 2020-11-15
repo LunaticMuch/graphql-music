@@ -1,7 +1,7 @@
 const resolvers = {
   Query: {
     artists: (_, args, ctx) => (console.log(`Artist: ${args.name}`), ctx.connectors.iTunes.artists(args)),
-    songs: (_, args, ctx) => (console.log(ctx.iTunes), ctx.connectors.iTunes.songs(args)),
+    songs: (_, args, ctx) => (ctx.connectors.iTunes.songs(args)),
   },
   Artist: {
     songs: ({ name }, { limit }, ctx) => (
