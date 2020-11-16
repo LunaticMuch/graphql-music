@@ -9,7 +9,7 @@ const { loadSchemaSync } = require('@graphql-tools/load');
 const express = require("express");
 const { graphqlHTTP } = require("express-graphql");
 
-const context = () => {
+
   const connectors = createConnectors();
   const loaders = {
     artist: new DataLoader((IDs) =>
@@ -19,9 +19,6 @@ const context = () => {
       )
     ),
   };
-
-  return { connectors, loaders };
-};
 
 const schema =  loadSchemaSync('./src/schema/*.graphql', {  // load files and merge them into a single schema object
   loaders: [
@@ -45,7 +42,7 @@ app.use(
   "/graphql",
   graphqlHTTP({
     schema: schemaWithResolvers,
-    context,
+    context: {connectors, loaders},
     graphiql: true,
   })
 );
